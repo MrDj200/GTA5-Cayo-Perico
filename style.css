@@ -1,0 +1,55 @@
+body, html {
+  background-color: #D8DBE2;
+
+  font-family: Verdana, sans-serif;
+  font-size: 12pt;
+  height: 0;
+  margin: 0 0 0 0;
+  padding: 3px 3px 3px 3px;
+  text-align: center;
+}
+
+h1, h2, p, table {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+a:visited {
+  color: blue;
+}
+
+input[type="text"], input[type="number"]{
+  width: 100%;
+}
+button {
+  width: 25%;
+}
+
+select {
+  width: 103%;
+}
+
+input, select {
+  text-align: center;
+}
+
+#SelectionTable {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  /*width:100%;*/
+  text-align: right;
+  padding: 3px 10px 3px 10px;
+  min-width: 100px;
+  background-color: #b5c2e0;
+}
+
+#SelectionTable td {
+  min-width: 150px;
+}
+
+/* because IE */
+#SelectionTable body {
+  text-align: center;
+}
+

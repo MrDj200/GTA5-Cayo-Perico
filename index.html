@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GTA V Cayo Perico payout calculator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="calc.js"></script>
+</head>
+<body>
+<h1>[WIP] GTA V Cayo Perico payout calculator</h1>
+<br>
+<table id="SelectionTable">
+  <tr>
+    <td><label for="hardMode">Hard mode</label></td>
+    <td style="padding: 0 0 0 0">
+      <input type="checkbox" id="hardMode"
+             style="width: 100%; height: 20px;"
+             checked onchange="calc()">
+    </td>
+  </tr>
+  <tr>
+    <td><label>Player count</label></td>
+    <td style="text-align: center">
+      <button id="playerCountDecrease" onclick="updateSecondaryInputCount('playerCount', -1, 1, 4)">&#60;</button>
+      <label id="playerCount">2</label>
+      <button id="playerCountIncrease" onclick="updateSecondaryInputCount('playerCount', 1, 1, 4)">&#62;</button>
+    </td>
+  </tr>
+  <tr>
+    <td><label for="primaryTarget">Charges</label></td>
+    <td>
+      <select id="primaryTarget" onchange="calc()">
+        <option value="bottle">Bottle</option>
+        <option value="necklace">Ruby Necklace</option>
+        <option value="bonds">Bonds</option>
+        <option value="diamond">Pink Diamond</option>
+        <option value="panther">Panther</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Cash piles</label></td>
+    <td style="text-align: center">
+      <button id="secondaryDecreaseCountCash" onclick="updateSecondaryInputCount('secondaryInputCountCash', -1, 0, 8)">&#60;</button>
+      <label id="secondaryInputCountCash">0</label>
+      <button id="secondaryIncreaseCountCash" onclick="updateSecondaryInputCount('secondaryInputCountCash', 1, 0, 8)">&#62;</button>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Art pieces</label></td>
+    <td style="text-align: center">
+      <button id="secondaryDecreaseCountArt" onclick="updateSecondaryInputCount('secondaryInputCountArt', -1, 0, 8)">&#60;</button>
+      <label id="secondaryInputCountArt">0</label>
+      <button id="secondaryIncreaseCountArt" onclick="updateSecondaryInputCount('secondaryInputCountArt', 1, 0, 8)">&#62;</button>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Gold piles</label></td>
+    <td style="text-align: center">
+      <button id="secondaryDecreaseCountGold" onclick="updateSecondaryInputCount('secondaryInputCountGold', -1, 0, 8)">&#60;</button>
+      <label id="secondaryInputCountGold">0</label>
+      <button id="secondaryIncreaseCountGold" onclick="updateSecondaryInputCount('secondaryInputCountGold', 1, 0, 8)">&#62;</button>
+    </td>
+  </tr>
+  <tr style="height: 5px"></tr>
+  <tr>
+    <td><label>Primary worth</label></td>
+    <td>
+      <label id="outputPrimaryWorth">$0</label>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Secondary worth</label></td>
+    <td>
+      <label id="outputSecondaryWorth">$0</label>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Total worth</label></td>
+    <td>
+      <label id="outputTotalWorth">$0</label>
+    </td>
+  </tr>
+  <tr style="height: 5px"></tr>
+  <tr>
+    <td><label>Cash piles</label></td>
+    <td>
+      <label id="outputCashPiles">0</label>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Cash pile clicks</label></td>
+    <td>
+      <label id="outputCashClicks">0</label>
+    </td>
+  </tr>
+  <tr style="height: 5px"></tr>
+  <tr>
+    <td><label>Art pieces</label></td>
+    <td>
+      <label id="outputArtPiles">0</label>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Art piece clicks</label></td>
+    <td>
+      <label id="outputArtClicks">0</label>
+    </td>
+  </tr>
+  <tr style="height: 5px"></tr>
+  <tr>
+    <td><label>Gold piles</label></td>
+    <td>
+      <label id="outputGoldPiles">0</label>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Gold pile clicks</label></td>
+    <td>
+      <label id="outputGoldClicks">0</label>
+    </td>
+  </tr>
+</table>
+</body>
+<script>
+  calc()
+</script>
+</html>
