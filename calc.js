@@ -53,7 +53,7 @@ function calc() {
 }
 
 function calcPrimary(primaryIndex, isHard) {
-  return (primaryValues[primaryIndex] * (isHard ? hardMultiplier : 1))
+  return Math.round(primaryValues[primaryIndex] * (isHard ? hardMultiplier : 1))
 }
 
 function calcSecondary(bagSpacePct, cashCount, artCount, goldCount) {
@@ -86,7 +86,7 @@ function calcSecondary(bagSpacePct, cashCount, artCount, goldCount) {
     }
   }
   return {
-    amount: max.amount,
+    amount: Math.round(max.amount),
     bagSpaceUsed: max.bagSpaceUsed,
     cashCount: max.cashClicks / secondaryValues["cash"].clicksPerStack,
     cashClicks: max.cashClicks,
