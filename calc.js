@@ -35,8 +35,8 @@ const secondaryValues = {
 }
 
 const hardMultiplier = 1.1
-const fencingFee = 0.1
-const pavelFee = 0.02
+const fencingFeePct = 0.1
+const pavelFeePct = 0.02
 
 
 function calc() {
@@ -52,9 +52,23 @@ function calc() {
   const primary = calcPrimary(primaryIndex, isHard)
   const secondary = calcSecondary(playerCount, cashCount, artCount, goldCount, cocaineCount, weedCount)
 
+  let totalWorth = primary + secondary.amount
+
+  let payoutTotal = totalWorth
+  let fencingFee = totalWorth * fencingFeePct
+  payoutTotal -= fencingFee
+  let pavelFee = totalWorth * pavelFeePct
+  payoutTotal -= pavelFee
+  let payoutPerPerson = Math.round(payoutTotal / playerCount)
+
   document.getElementById("outputPrimaryWorth").textContent = `$${Number(primary).toLocaleString()}`
   document.getElementById("outputSecondaryWorth").textContent = `$${Number(secondary.amount).toLocaleString()}`
-  document.getElementById("outputTotalWorth").textContent = `$${Number(primary + secondary.amount).toLocaleString()}`
+  document.getElementById("outputTotalWorth").textContent = `$${Number(totalWorth).toLocaleString()}`
+
+  document.getElementById("outputFencingFee").textContent = `$${Number(fencingFee).toLocaleString()}`
+  document.getElementById("outputPavelFee").textContent = `$${Number(pavelFee).toLocaleString()}`
+  document.getElementById("outputPayoutTotal").textContent = `$${Number(payoutTotal).toLocaleString()}`
+  document.getElementById("outputPayoutPerPerson").textContent = `$${Number(payoutPerPerson).toLocaleString()}`
 
   document.getElementById("outputCashPiles").textContent = Number(secondary.cashCount).toLocaleString()
   document.getElementById("outputCashClicks").textContent = Number(secondary.cashClicks).toLocaleString()
