@@ -38,7 +38,6 @@ const hardMultiplier = 1.1
 const fencingFeePct = 0.1
 const pavelFeePct = 0.02
 
-
 function calc() {
   const isHard = document.getElementById("hardMode").checked
   const primaryIndex = document.getElementById("primaryTarget").value
@@ -61,29 +60,30 @@ function calc() {
   payoutTotal -= pavelFee
   let payoutPerPerson = Math.round(payoutTotal / playerCount)
 
-  document.getElementById("outputPrimaryWorth").textContent = `$${Number(primary).toLocaleString()}`
-  document.getElementById("outputSecondaryWorth").textContent = `$${Number(secondary.amount).toLocaleString()}`
-  document.getElementById("outputTotalWorth").textContent = `$${Number(totalWorth).toLocaleString()}`
+  updateLabel("outputPrimaryWorth", primary, true)
+  updateLabel("outputSecondaryWorth", secondary.amount, true)
+  updateLabel("outputTotalWorth", totalWorth, true)
 
-  document.getElementById("outputFencingFee").textContent = `$${Number(fencingFee).toLocaleString()}`
-  document.getElementById("outputPavelFee").textContent = `$${Number(pavelFee).toLocaleString()}`
-  document.getElementById("outputPayoutTotal").textContent = `$${Number(payoutTotal).toLocaleString()}`
-  document.getElementById("outputPayoutPerPerson").textContent = `$${Number(payoutPerPerson).toLocaleString()}`
+  updateLabel("outputFencingFee", fencingFee, true)
+  updateLabel("outputPavelFee", pavelFee, true)
+  updateLabel("outputPayoutTotal", payoutTotal, true)
+  updateLabel("outputPayoutPerPerson", payoutPerPerson, true)
 
-  document.getElementById("outputCashPiles").textContent = Number(secondary.cashCount).toLocaleString()
-  document.getElementById("outputCashClicks").textContent = Number(secondary.cashClicks).toLocaleString()
 
-  document.getElementById("outputArtPiles").textContent = Number(secondary.artCount).toLocaleString()
-  document.getElementById("outputArtClicks").textContent = Number(secondary.artClicks).toLocaleString()
+  updateLabel("outputCashPiles", secondary.cashCount)
+  updateLabel("outputCashClicks", secondary.cashClicks)
 
-  document.getElementById("outputGoldPiles").textContent = Number(secondary.goldCount).toLocaleString()
-  document.getElementById("outputGoldClicks").textContent = Number(secondary.goldClicks).toLocaleString()
+  updateLabel("outputArtPiles", secondary.artCount)
+  updateLabel("outputArtClicks", secondary.artClicks)
 
-  document.getElementById("outputCocainePiles").textContent = Number(secondary.cocaineCount).toLocaleString()
-  document.getElementById("outputCocaineClicks").textContent = Number(secondary.cocaineClicks).toLocaleString()
+  updateLabel("outputGoldPiles", secondary.goldCount)
+  updateLabel("outputGoldClicks", secondary.goldClicks)
 
-  document.getElementById("outputWeedPiles").textContent = Number(secondary.weedCount).toLocaleString()
-  document.getElementById("outputWeedClicks").textContent = Number(secondary.weedClicks).toLocaleString()
+  updateLabel("outputCocainePiles", secondary.cocaineCount)
+  updateLabel("outputCocaineClicks", secondary.cocaineClicks)
+
+  updateLabel("outputWeedPiles", secondary.weedCount)
+  updateLabel("outputWeedClicks", secondary.weedClicks)
 }
 
 function calcPrimary(primaryIndex, isHard) {
@@ -170,6 +170,10 @@ function updateSecondaryInputCount(inputName, amount, min, max) {
   let input = document.getElementById(inputName)
   input.textContent = Math.min(max, Math.max(min, Number(input.textContent) + amount)) + ""
   calc()
+}
+
+function updateLabel(elementId, value, dollarSign = false) {
+  document.getElementById(elementId).textContent = `${dollarSign ? "$" : ""}${Number(value).toLocaleString()}`
 }
 
 
