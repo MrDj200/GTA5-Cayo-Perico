@@ -48,6 +48,14 @@ input, select {
   min-width: 150px;
 }
 
+#SelectionTable.inputClicks td {
+  text-align: center;
+}
+
+#SelectionTable.separator tr {
+  height: 5px;
+}
+
 /* because IE */
 #SelectionTable body {
   text-align: center;

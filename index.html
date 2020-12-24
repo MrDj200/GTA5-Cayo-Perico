@@ -38,9 +38,10 @@
       </select>
     </td>
   </tr>
+  <tr style="height: 5px"></tr>
   <tr>
     <td><label>Cash piles</label></td>
-    <td style="text-align: center">
+    <td class="inputClicks">
       <button id="secondaryDecreaseCountCash" onclick="updateSecondaryInputCount('secondaryInputCountCash', -1, 0, 8)">&#60;</button>
       <label id="secondaryInputCountCash">0</label>
       <button id="secondaryIncreaseCountCash" onclick="updateSecondaryInputCount('secondaryInputCountCash', 1, 0, 8)">&#62;</button>
@@ -48,7 +49,7 @@
   </tr>
   <tr>
     <td><label>Art pieces</label></td>
-    <td style="text-align: center">
+    <td class="inputClicks">
       <button id="secondaryDecreaseCountArt" onclick="updateSecondaryInputCount('secondaryInputCountArt', -1, 0, 8)">&#60;</button>
       <label id="secondaryInputCountArt">0</label>
       <button id="secondaryIncreaseCountArt" onclick="updateSecondaryInputCount('secondaryInputCountArt', 1, 0, 8)">&#62;</button>
@@ -56,10 +57,27 @@
   </tr>
   <tr>
     <td><label>Gold piles</label></td>
-    <td style="text-align: center">
+    <td class="inputClicks">
       <button id="secondaryDecreaseCountGold" onclick="updateSecondaryInputCount('secondaryInputCountGold', -1, 0, 8)">&#60;</button>
       <label id="secondaryInputCountGold">0</label>
       <button id="secondaryIncreaseCountGold" onclick="updateSecondaryInputCount('secondaryInputCountGold', 1, 0, 8)">&#62;</button>
+    </td>
+  </tr>
+  <tr style="height: 5px"></tr>
+  <tr>
+    <td><label>Cocaine piles</label></td>
+    <td class="inputClicks">
+      <button id="secondaryDecreaseCountCocaine" onclick="updateSecondaryInputCount('secondaryInputCountCocaine', -1, 0, 8)">&#60;</button>
+      <label id="secondaryInputCountCocaine">0</label>
+      <button id="secondaryIncreaseCountCocaine" onclick="updateSecondaryInputCount('secondaryInputCountCocaine', 1, 0, 8)">&#62;</button>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Weed piles</label></td>
+    <td class="inputClicks">
+      <button id="secondaryDecreaseCountWeed" onclick="updateSecondaryInputCount('secondaryInputCountWeed', -1, 0, 8)">&#60;</button>
+      <label id="secondaryInputCountWeed">0</label>
+      <button id="secondaryIncreaseCountWeed" onclick="updateSecondaryInputCount('secondaryInputCountWeed', 1, 0, 8)">&#62;</button>
     </td>
   </tr>
   <tr style="height: 5px"></tr>
@@ -118,6 +136,33 @@
     <td><label>Gold pile clicks</label></td>
     <td>
       <label id="outputGoldClicks">0</label>
+    </td>
+  </tr>
+  <tr style="height: 5px"></tr>
+  <tr style="height: 5px"></tr>
+  <tr>
+    <td><label>Cocaine piles</label></td>
+    <td>
+      <label id="outputCocainePiles">0</label>
+    </td>
+  </tr>
+  <tr>
+    <td><label>cocaine pile clicks</label></td>
+    <td>
+      <label id="outputCocaineClicks">0</label>
+    </td>
+  </tr>
+  <tr style="height: 5px"></tr>
+  <tr>
+    <td><label>Weed piles</label></td>
+    <td>
+      <label id="outputWeedPiles">0</label>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Weed pile clicks</label></td>
+    <td>
+      <label id="outputWeedClicks">0</label>
     </td>
   </tr>
 </table>
