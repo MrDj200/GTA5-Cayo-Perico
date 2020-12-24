@@ -18,15 +18,16 @@ a:visited {
   color: blue;
 }
 
-input[type="text"], input[type="number"]{
+input[type="checkbox"] {
+  width: 100%;
+  height: 20px;
+}
+
+input[type="text"], input[type="number"], select{
   width: 100%;
 }
 button {
   width: 25%;
-}
-
-select {
-  width: 103%;
 }
 
 input, select {
@@ -48,14 +49,21 @@ input, select {
   min-width: 150px;
 }
 
-#SelectionTable.inputClicks td {
+.inputClicks {
   text-align: center;
 }
 
-#SelectionTable.separator tr {
+.separatorSmall {
   height: 5px;
 }
 
+.separatorMed {
+  height: 12px;
+}
+
+.separatorBig {
+  height: 25px;
+}
 /* because IE */
 #SelectionTable body {
   text-align: center;
