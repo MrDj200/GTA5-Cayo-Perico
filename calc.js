@@ -9,28 +9,28 @@ const primaryValues = {
 const secondaryValues = {
   cash: {
     pctPerStack: 1 / 4,
-    dollarPerStack: 90_000,
+    dollarPerStack: 89_420,
     clicksPerStack: 10
   },
   art: {
     pctPerStack: 1 / 2,
-    dollarPerStack: 192_000,
+    dollarPerStack: 199_700,
     clicksPerStack: 1
   },
   gold: {
     pctPerStack: 2 / 3,
-    dollarPerStack: 325_000,
+    dollarPerStack: 333_192,
     clicksPerStack: 7
   },
   cocaine: {
     pctPerStack: 1 / 2,
-    dollarPerStack: 220_000,
+    dollarPerStack: 220_500,
     clicksPerStack: 10
   },
   weed: {
     pctPerStack: 1 / 3,
     dollarPerStack: 110_000,
-    clicksPerStack: 10
+    clicksPerStack: 149_265
   }
 }
 
