@@ -29,8 +29,8 @@ const secondaryValues = {
   },
   weed: {
     pctPerStack: 1 / 3,
-    dollarPerStack: 110_000,
-    clicksPerStack: 149_265
+    dollarPerStack: 149_265,
+    clicksPerStack: 10
   }
 }
 
